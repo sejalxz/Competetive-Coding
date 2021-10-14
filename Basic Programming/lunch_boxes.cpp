@@ -1,3 +1,8 @@
+// HackerEarth
+// Lunch boxes
+// Basic Programming
+// Author: sejalxz
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
