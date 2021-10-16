@@ -11,23 +11,15 @@ using namespace std;
 
 int first_digit(long long int X)
 {
-
-    while (X > 0)
+    while (X > 9)
     {
-        if (X == 10)
-            return 1;
-
-        if (X / 10 == 0)
-        {
-            break;
-        }
         X = X / 10;
     }
     return X;
 }
 int main()
 {
-    long long int N, i, j, sum = 0;
+    long long int N, i, j, sum = 0ll;
     cin >> N;
     long long int Arr[N];
     long long int A[N / 2];
@@ -37,14 +29,10 @@ int main()
     {
         cin >> Arr[i];
     }
-
+    j = N / 2;
     for (i = 0; i < N / 2; i++)
     {
         A[i] = Arr[i];
-    }
-
-    for (i = 0, j = N / 2; i < N / 2; i++)
-    {
         B[i] = Arr[j++];
     }
 
@@ -64,3 +52,37 @@ int main()
         cout << "NON";
     return 0;
 }
+
+//Solution 2
+
+// #include <iostream>
+// #include <sstream>
+// #include <string>
+
+// using namespace std;
+// int main()
+// {
+//     long long int N, i, sum;
+//     cin >> N;
+
+//     string Arr[N];
+//     string str_sum;
+
+//     for (i = 0; i < N; i++)
+//     {
+//         cin >> Arr[i];
+//         if (i < (N / 2))
+//             str_sum = str_sum + Arr[i].at(0);
+//         else
+//             str_sum += Arr[i].at(Arr[i].length() - 1);
+//     }
+
+//     stringstream ss(str_sum);
+//     ss >> sum;
+
+//     if (sum % 11 == 0)
+//         cout << "OUI";
+//     else
+//         cout << "NON";
+//     return 0;
+// }
