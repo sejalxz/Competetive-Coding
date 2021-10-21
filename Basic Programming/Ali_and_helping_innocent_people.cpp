@@ -68,7 +68,6 @@ int main()
     int x6 = num(str[5]);
     int x8 = num(str[7]);
     int x9 = num(str[8]);
-
     if (str.length() > 9)
     {
         cout << "valid";
@@ -76,7 +75,7 @@ int main()
     }
     else
     {
-        if (((x1 + x2) / 2 == 0) && ((x4 + x5) / 2 == 0) && ((x5 + x6) / 2 == 0) && ((x8 + x9) / 2 == 0) && isNotVowel(str[2]))
+        if (isNotVowel(str[2]) && (x1 + x2) % 2 == 0 && (x4 + x5) % 2 == 0 && (x5 + x6) % 2 == 0 && (x8 + x9) % 2 == 0)
         {
             cout << "valid";
             goto exit;
